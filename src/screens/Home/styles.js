@@ -21,4 +21,16 @@ export const styles = StyleSheet.create({
   searchBarContainer: {
     marginVertical: 20,
   },
+  bookListContainer:{},
+  bookImage:{},
+  bookTitle:{
+    fontSize: 14,
+    fontWeight: '600',
+    color: COLORS.primaryText,
+    marginTop: 5,
+  },
+  ratingStars:{
+    flexDirection: 'row',
+    marginTop: 5,
+  }
 });
