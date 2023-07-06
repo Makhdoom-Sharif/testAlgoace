@@ -12,8 +12,10 @@ import {COLORS, ICONS} from '../../theme';
 const Home = () => {
   const dispatch = useDispatch();
   const [searchPhrase, setSearchPhrase] = useState('');
+  
   const [clicked, setClicked] = useState(false);
   const data = useSelector(state => state.bookList);
+  const [dataDisplay, setDataDisplay] = useState(data);
   // console.log('data==', data);
   let item = data[0];
   console.log('item', item);
@@ -31,18 +33,36 @@ const Home = () => {
   }, []);
   const [imageWidth, setImageWidth] = useState(0);
 
-  useEffect(() => {
-    const screenWidth = Dimensions.get('window').width;
-    const margin = 20; // Adjust the margin between images as needed
-    const calculatedWidth = (screenWidth - margin * 3) / 2; // Two images per row with margin space
-    setImageWidth(calculatedWidth);
-  }, [])
-  const renderItem = ({ item }) => (
-    <View style={{ ...styles.bookListContainer, width: imageWidth }}>
+    const screenHeight = Dimensions.get('window').height;
+  // useEffect(() => {
+  //   const margin = 20; // Adjust the margin between images as needed
+  //   const calculatedWidth = (screenWidth - margin * 3) / 2; // Two images per row with margin space
+  //   setImageWidth(calculatedWidth);
+  // }, [])
+  const filterData=()=>{
+    if(!!searchPhrase.length){
+    setDataDisplay(data.filter((el)=>el.title.toLowerCase().includes(searchPhrase.toLowerCase())))
+  
+  }else{
+    setDataDisplay(data)
+  }
+  }
+
+
+  useEffect(()=>{
+filterData()
+
+  },[searchPhrase])
+  const renderItem = ({ item,index }) =>{
+    
+    if(item?.title?.toLowerCase()?.includes( searchPhrase.toLowerCase())){
+
+      return(
+        <View style={{width: '50%',paddingRight:index%2==0?5:0, marginBottom:20,paddingLeft:index%2==0?0:5}}>
       <Image
         source={{ uri: item?.imageLink }}
-        style={[styles.bookImage, { height: imageWidth }]}
-        resizeMode="contain"
+        style={[{ minWidth:'100%',height: 300 , borderRadius:10}]}
+        resizeMode='stretch'
       />
 
       <Text style={styles.bookTitle}>{item?.title}</Text>
@@ -58,14 +78,15 @@ const Home = () => {
           )}
           keyExtractor={(index) => index.toString()}
           horizontal
-        />
+          />
          
         <Text>({item?.reviews})</Text>
       </View>
   
       <Text style={{ marginTop: 5 }}>{`$ ${item?.price}`}</Text>
     </View>
-  );
+  )};
+}
   
   return (
     <SafeAreaView>
@@ -83,10 +104,11 @@ const Home = () => {
           />
         </View>
         <FlatList
-        data={[item]}
+        data={dataDisplay}
+        style={{height:screenHeight-180}}
         renderItem={renderItem}
           numColumns={2}
-          contentContainerStyle={{ paddingBottom: 20 }}
+          // contentContainerStyle={{ paddingBottom: 20 }}
           showsVerticalScrollIndicator={false}
 />
 <View />
