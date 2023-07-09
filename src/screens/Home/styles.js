@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 import {COLORS} from '../../theme';
+const screenHeight = Dimensions.get('window').height;
 
 export const styles = StyleSheet.create({
   container: {padding: 20},
@@ -21,16 +22,21 @@ export const styles = StyleSheet.create({
   searchBarContainer: {
     marginVertical: 20,
   },
-  bookListContainer:{},
-  bookImage:{},
-  bookTitle:{
+  bookListContainer: {},
+  bookImage: {},
+  bookTitle: {
     fontSize: 14,
     fontWeight: '600',
     color: COLORS.primaryText,
     marginTop: 5,
   },
-  ratingStars:{
+  ratingStars: {
     flexDirection: 'row',
     marginTop: 5,
-  }
+  },
+  loaderContainer: {
+    height: screenHeight - 180,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

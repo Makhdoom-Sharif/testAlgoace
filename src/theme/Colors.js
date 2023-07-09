@@ -2,6 +2,11 @@ export const COLORS = {
   primaryBackground: '#fff',
   primaryText: '#000000',
   secondaryBackground: '#EFEFEF',
+  yellow: '#DF9401',
+  gray: '#D9D9D9',
+  red: '#D80000',
+  secondaryText: '#B2B2B2',
+  blue: '#004D6D',
 
   //   subText: '#B1B1B1',
   //   error: 'red',

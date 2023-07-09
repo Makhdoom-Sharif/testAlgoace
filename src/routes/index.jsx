@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/Home';
 import {COLORS} from '../theme';
+import BookPreview from '../screens/BookPreview';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,16 @@ const Navigation = () => {
         <Stack.Screen
           name={'home'}
           component={Home}
+          options={{
+            headerShown: false,
+            // presentation: 'modal',
+            // animation: item?.animation,
+          }}
+          //   key={index}
+        />
+        <Stack.Screen
+          name={'BookPreview'}
+          component={BookPreview}
           options={{
             headerShown: false,
             // presentation: 'modal',
