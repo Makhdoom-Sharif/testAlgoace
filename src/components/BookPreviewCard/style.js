@@ -6,17 +6,15 @@ export const styles = StyleSheet.create({
     marginVertical: 20,
     paddingHorizontal: 20,
     borderRadius: 10,
-    // Add styles for your view container
-    backgroundColor: '#FFFFFF', // Example background color
-    elevation: 5, // Controls the depth of the shadow
-
-    shadowColor: '#000000', // Sets the color of the shadow
+    backgroundColor: COLORS.primaryBackground,
+    elevation: 5,
+    shadowColor: COLORS.primaryText,
     shadowOffset: {
-      width: 5, // Controls the shadow's horizontal offset
-      height: 5, // Controls the shadow's vertical offset
+      width: 5,
+      height: 5,
     },
-    shadowOpacity: 0.5, // Sets the opacity/transparency of the shadow
-    shadowRadius: 5, // Sets the blur radius of the shadow
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
     paddingTop: 20,
   },
   image: {

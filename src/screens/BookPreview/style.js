@@ -18,19 +18,4 @@ export const styles = StyleSheet.create({
     marginRight: 5,
   },
   value: {fontSize: 16, color: COLORS.primaryText},
-  button: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#004D6D',
-    paddingVertical: 10,
-    borderRadius: 100,
-    marginBottom: 25,
-  },
-  buttonText: {
-    color: COLORS.primaryBackground,
-    fontSize: 16,
-    fontWeight: '500',
-    marginRight: 5,
-  },
 });

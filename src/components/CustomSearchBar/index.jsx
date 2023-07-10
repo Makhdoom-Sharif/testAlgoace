@@ -3,12 +3,7 @@ import {TextInput, View} from 'react-native';
 import {COLORS, ICONS} from '../../theme';
 import {styles} from './styles';
 
-const CustomSearchBar = ({
-  clicked,
-  searchPhrase,
-  setSearchPhrase,
-  setClicked,
-}) => {
+const CustomSearchBar = ({searchPhrase, setSearchPhrase}) => {
   return (
     <View style={styles.container}>
       <View style={styles.searchBar}>
@@ -23,9 +18,6 @@ const CustomSearchBar = ({
           placeholder="Search..."
           value={searchPhrase}
           onChangeText={setSearchPhrase}
-          onFocus={() => {
-            setClicked(prev => !prev);
-          }}
         />
       </View>
     </View>

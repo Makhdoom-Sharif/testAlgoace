@@ -83,6 +83,7 @@ const Home = () => {
             renderItem={renderItem}
             numColumns={2}
             showsVerticalScrollIndicator={false}
+            initialNumToRender={10}
           />
         )}
         <View />

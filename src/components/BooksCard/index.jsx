@@ -1,9 +1,9 @@
 import React from 'react';
-import {FlatList, Image, Text, View, Pressable} from 'react-native';
-import {COLORS, ICONS} from '../../theme';
-import {styles} from './style';
 import {useNavigation} from '@react-navigation/native';
+import {Image, Pressable, Text, View} from 'react-native';
+import {COLORS, ICONS} from '../../theme';
 import RatingStars from '../RatingStars';
+import {styles} from './style';
 
 const BooksCard = props => {
   const {item, index} = props;

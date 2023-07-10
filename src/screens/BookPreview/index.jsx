@@ -1,18 +1,9 @@
-import React from 'react';
-import {
-  Dimensions,
-  FlatList,
-  Image,
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  View,
-} from 'react-native';
-import {COLORS, ICONS} from '../../theme';
 import {useNavigation} from '@react-navigation/native';
-import {styles} from './style';
+import React from 'react';
+import {FlatList, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import {BookPreviewCard, CustomButton} from '../../components';
+import {COLORS, ICONS} from '../../theme';
+import {styles} from './style';
 
 const BookPreview = props => {
   const {goBack} = useNavigation();
